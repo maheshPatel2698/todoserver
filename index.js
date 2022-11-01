@@ -7,7 +7,9 @@ const cors = require('cors')
 const connection = require('./Db/connection')
 connection()
 app.use(cookie())
-app.use(cors())
+app.use(cors({
+    origin: "https://merntodo2022.netlify.app/"
+}))
 app.use(express.json())
 
 app.use(function (req, res, next) {
