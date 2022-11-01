@@ -9,8 +9,7 @@ const cookieToken = async (user, res) => {
         expires: new Date(
             Date.now() + 3 * 24 * 60 * 60 * 1000
         ),
-        httpOnly: false,
-        domain: 'http://localhost:3000',
+        httpsOnly: true
     }
     user.password = undefined
     res.cookie('token', token, options).json({
